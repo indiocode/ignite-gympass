@@ -23,11 +23,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'npm'
+          cache: 'yarn'
 
-      - run: npm ci
+      - run: yarn install
 
-      - run: npm run test:e2e
+      - run: yarn run test:e2e
         env:
           JWT_SECRET: testing
           DATABASE_URL: 'postgresql://docker:docker@localhost:5432/apisolid?schema=public'
